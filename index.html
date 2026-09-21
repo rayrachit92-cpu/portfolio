@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rachit Kumar — AI & ML student, MERN and Full-Stack Developer portfolio.">
+<title>Rachit Kumar | AI/ML × Full-Stack Developer</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap');
+:root{
+  --bg:#070a0f; --panel:#0d121a; --panel2:#111824; --text:#eef6f4; --muted:#91a0aa;
+  --mint:#55f2bd; --cyan:#57d9ff; --violet:#9b7cff; --line:rgba(255,255,255,.09);
+  --shadow:0 25px 80px rgba(0,0,0,.38);
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:
+radial-gradient(circle at 10% 0%,rgba(85,242,189,.09),transparent 28%),
+radial-gradient(circle at 90% 15%,rgba(87,217,255,.08),transparent 25%),
+var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,92%);margin:auto}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(7,10,15,.72);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.navin{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;letter-spacing:-.04em;font-size:20px}.logo span{color:var(--mint)}
+.navlinks{display:flex;gap:24px;color:#b9c5ca;font-size:13px}.navlinks a:hover{color:var(--mint)}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 17px;border-radius:10px;border:1px solid var(--line);background:#101722;color:white;font-weight:700;font-size:13px;transition:.25s}
+.btn:hover{transform:translateY(-2px);border-color:rgba(85,242,189,.5);box-shadow:0 10px 30px rgba(85,242,189,.08)}
+.btn.primary{background:var(--mint);color:#04120d;border-color:var(--mint)}
+.hero{min-height:100vh;padding-top:125px;display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center}
+.eyebrow{font-family:"DM Mono";font-size:12px;color:var(--mint);letter-spacing:.13em;text-transform:uppercase}
+h1{font-size:clamp(48px,7vw,84px);line-height:.98;letter-spacing:-.07em;margin:15px 0 22px}
+.gradient{background:linear-gradient(100deg,var(--mint),var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:17px;color:#aab7bd;max-width:700px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero-meta{display:flex;gap:25px;flex-wrap:wrap;margin-top:30px;color:#8f9ca3;font-size:12px}
+.hero-meta b{color:#e9f2ef;display:block;font-size:15px}
+.profile-wrap{position:relative;display:flex;justify-content:center}
+.orbit{position:absolute;width:360px;height:360px;border:1px dashed rgba(85,242,189,.25);border-radius:50%;animation:spin 18s linear infinite}
+.orbit:after{content:"";position:absolute;width:9px;height:9px;background:var(--mint);border-radius:50%;top:16px;left:50%;box-shadow:0 0 25px var(--mint)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.profile-card{position:relative;width:330px;height:330px;border-radius:50%;overflow:hidden;border:2px solid rgba(85,242,189,.32);box-shadow:0 0 0 10px rgba(85,242,189,.035),0 25px 80px rgba(0,0,0,.42);background:#0d121a}
+.profile-card img{width:100%;height:100%;object-fit:cover;display:block;border-radius:50%;}
+.profile-label{display:none}
+section{padding:105px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:38px}
+.kicker{color:var(--mint);font-family:"DM Mono";font-size:11px;text-transform:uppercase;letter-spacing:.12em}
+h2{font-size:40px;line-height:1.05;letter-spacing:-.05em;margin:8px 0}.section-head p{max-width:540px;color:var(--muted);margin:0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{background:linear-gradient(145deg,rgba(17,24,36,.92),rgba(10,14,20,.92));border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:0 15px 45px rgba(0,0,0,.15)}
+.card p{color:#aeb9bf}.quote{font-size:22px;line-height:1.35;color:#eaf4f1}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:20px}
+.fact{padding:15px;border:1px solid var(--line);border-radius:13px;background:#0b1017}.fact b{font-size:19px;color:var(--mint)}.fact span{display:block;color:#87959d;font-size:11px;margin-top:3px}
+.timeline{display:grid;grid-template-columns:140px 1fr;gap:22px;padding:20px 0;border-top:1px solid var(--line)}.timeline:last-child{border-bottom:1px solid var(--line)}
+.timeline .year{font-family:"DM Mono";color:var(--mint);font-size:12px}.timeline h3{margin:0 0 5px;font-size:18px}.timeline p{margin:0;color:var(--muted);font-size:14px}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.skill-card{padding:21px;border:1px solid var(--line);border-radius:17px;background:#0b1017}.skill-card h3{margin:0 0 11px;font-size:15px}.chips{display:flex;gap:7px;flex-wrap:wrap}.chip{padding:6px 9px;border-radius:7px;background:#121b26;color:#b9c8ce;font-family:"DM Mono";font-size:10px;border:1px solid rgba(255,255,255,.05)}
+.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.project{position:relative;overflow:hidden}.project:before{content:"";position:absolute;width:160px;height:160px;background:var(--mint);filter:blur(80px);opacity:.07;right:-50px;top:-50px}.project-top{display:flex;justify-content:space-between;gap:15px}.project-num{font-family:"DM Mono";color:var(--mint);font-size:11px}.project h3{font-size:21px;margin:8px 0}.tech{color:#8e9da5;font-family:"DM Mono";font-size:10px}.project ul{padding-left:18px;color:#aeb9bf;font-size:13px}.project li{margin:6px 0}.project-links{display:flex;gap:9px;margin-top:18px;flex-wrap:wrap}.mini{font-size:11px;padding:8px 11px;border-radius:8px;background:#111a25;border:1px solid var(--line);color:#c8d4d8}
+.education{display:grid;gap:12px}.edu{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}.edu h3{margin:0;font-size:16px}.edu p{margin:3px 0 0;color:var(--muted);font-size:13px}.score{color:var(--mint);font-family:"DM Mono";font-size:12px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}.contact-list{display:grid;gap:10px}.contact-item{display:flex;align-items:center;gap:13px;padding:15px;border:1px solid var(--line);border-radius:13px;background:#0b1017}.icon{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:#13221f;color:var(--mint);font-weight:800}.contact-item small{display:block;color:#74828a}.contact-item strong{font-size:13px}
+footer{padding:30px 0;border-top:1px solid var(--line);color:#68767e;font-size:12px}
+.reveal{opacity:0;transform:translateY(18px);transition:.7s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:850px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding-top:110px}.profile-wrap{order:-1}.orbit{width:300px;height:300px}.profile-card{width:285px;height:285px}.about-grid,.contact{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr 1fr}.project-grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:12px}.timeline{grid-template-columns:1fr;gap:5px}}
+@media(max-width:520px){h1{font-size:47px}.skills-grid{grid-template-columns:1fr}.hero p{font-size:15px}.facts{grid-template-columns:1fr}.edu{grid-template-columns:1fr}.profile-card{width:240px;height:240px}}
+</style>
+</head>
+<body>
+
+<nav><div class="container navin">
+  <a class="logo" href="#home">RK<span>.</span></a>
+  <div class="navlinks">
+    <a href="#about">About</a><a href="#journey">Journey</a><a href="#skills">Skills</a>
+    <a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+  </div>
+  <a class="btn primary" href="assets/Rachit_Kumar_Resume.pdf" download>Download Resume</a>
+</div></nav>
+
+<main>
+<section class="container hero" id="home">
+  <div class="reveal">
+    <div class="eyebrow">AI & ML Student · Full-Stack Developer</div>
+    <h1>I build <span class="gradient">useful software</span> that solves real problems.</h1>
+    <p>
+      I'm <b>Rachit Kumar</b>, a third-year B.Tech student at MIT Academy of Engineering, Alandi.
+      I work at the intersection of <b>Artificial Intelligence, web development and practical problem solving</b> —
+      from React interfaces and REST APIs to databases, deployment and AI-powered applications.
+    </p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#projects">Explore My Work ↗</a>
+      <a class="btn" href="#contact">Let's Connect</a>
+    </div>
+    <div class="hero-meta">
+      <div><b>7.9</b>Current CGPA</div>
+      <div><b>5+</b>Major projects</div>
+      <div><b>3rd</b>Year of B.Tech</div>
+      <div><b>Vercel + Render</b>Deployment experience</div>
+    </div>
+  </div>
+  <div class="profile-wrap reveal">
+    <div class="orbit"></div>
+    <div class="profile-card">
+      <img src="assets/profile-circle.png" alt="Rachit Kumar">
+      <div class="profile-label"><small>CURRENT FOCUS</small><strong>MERN · AI · APIs · Deployment</strong></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+<div class="container">
+  <div class="section-head reveal"><div><div class="kicker">01 · About me</div><h2>More than a resume.</h2></div>
+  <p>This is the story behind the projects: what I enjoy building, how I approach problems, and what I am preparing for next.</p></div>
+  <div class="about-grid">
+    <div class="card reveal">
+      <div class="quote">“I learn best by building — turning an idea into a working interface, API, model or deployed product.”</div>
+      <p>
+        My academic foundation is <b>Artificial Intelligence & Machine Learning</b>, but my interests go beyond model training.
+        I enjoy understanding how complete products work: the frontend a user sees, the backend that powers it,
+        the database behind the data, the APIs connecting services, and the deployment that makes the project accessible.
+      </p>
+      <p>
+        That mindset has led me to work on mapping and digital-twin systems, AI applications, smart agriculture,
+        interview platforms and other web projects. I am especially interested in roles where I can own a feature,
+        troubleshoot it, and see it working end-to-end.
+      </p>
+    </div>
+    <div class="card reveal">
+      <div class="kicker">How I work</div>
+      <h3>Build → Test → Debug → Deploy → Improve</h3>
+      <p>
+        I prefer practical learning over only following tutorials. When something breaks, I trace the issue,
+        test assumptions, read errors and iterate until the application works.
+      </p>
+      <div class="facts">
+        <div class="fact"><b>Frontend</b><span>Interfaces users interact with</span></div>
+        <div class="fact"><b>Backend</b><span>APIs & application logic</span></div>
+        <div class="fact"><b>Data</b><span>MongoDB, MySQL & CRUD</span></div>
+        <div class="fact"><b>AI/ML</b><span>Models & intelligent features</span></div>
+        <div class="fact"><b>Deployment</b><span>Vercel & Render</span></div>
+        <div class="fact"><b>Teamwork</b><span>Git/GitHub collaboration</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="journey">
+<div class="container">
+  <div class="section-head reveal"><div><div class="kicker">02 · Journey</div><h2>Where I am heading.</h2></div>
+  <p>My current goal is to turn academic knowledge and project work into strong professional software-development experience.</p></div>
+  <div class="timeline reveal">
+    <div class="year">2022</div><div><h3>Secondary School</h3><p>Completed SSC from DAV Public School, Madhepur, Bihar with <b>90.6%</b>.</p></div>
+  </div>
+  <div class="timeline reveal">
+    <div class="year">2024</div><div><h3>Higher Secondary + Engineering</h3><p>Completed HSC Science from New Wisdom International School, Wadebolhai with <b>73.6%</b>, then began B.Tech in AI & ML at MITAOE, Alandi.</p></div>
+  </div>
+  <div class="timeline reveal">
+    <div class="year">NOW</div><div><h3>Third Year · Building in Public</h3><p>Developing deployed web applications, collaborating on team projects, strengthening full-stack skills and exploring AI-powered products.</p></div>
+  </div>
+  <div class="timeline reveal">
+    <div class="year">NEXT</div><div><h3>Full-Stack / MERN Internship</h3><p>Looking for a project-based environment where I can contribute to real software, learn professional engineering practices and take ownership of development tasks.</p></div>
+  </div>
+</div>
+</section>
+
+<section id="skills">
+<div class="container">
+  <div class="section-head reveal"><div><div class="kicker">03 · Toolkit</div><h2>What I can work with.</h2></div>
+  <p>A practical stack built around web development, APIs, data, AI/ML and deployment.</p></div>
+  <div class="skills-grid">
+    <div class="skill-card reveal"><h3>Frontend</h3><div class="chips"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">React.js</span><span class="chip">Tailwind CSS</span><span class="chip">Responsive UI</span></div></div>
+    <div class="skill-card reveal"><h3>Backend & APIs</h3><div class="chips"><span class="chip">Node.js</span><span class="chip">Express.js</span><span class="chip">FastAPI</span><span class="chip">Flask</span><span class="chip">REST APIs</span><span class="chip">API Integration</span></div></div>
+    <div class="skill-card reveal"><h3>Databases</h3><div class="chips"><span class="chip">MongoDB</span><span class="chip">MySQL</span><span class="chip">SQL</span><span class="chip">CRUD</span><span class="chip">Data Management</span></div></div>
+    <div class="skill-card reveal"><h3>Programming</h3><div class="chips"><span class="chip">Python</span><span class="chip">C</span><span class="chip">C++</span><span class="chip">DSA</span></div></div>
+    <div class="skill-card reveal"><h3>AI / ML</h3><div class="chips"><span class="chip">Scikit-learn</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">TensorFlow</span><span class="chip">PyTorch</span><span class="chip">Generative AI</span></div></div>
+    <div class="skill-card reveal"><h3>Tools & Deployment</h3><div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">VS Code</span><span class="chip">Postman</span><span class="chip">Vercel</span><span class="chip">Render</span></div></div>
+  </div>
+</div>
+</section>
+
+<section id="projects">
+<div class="container">
+  <div class="section-head reveal"><div><div class="kicker">04 · Selected work</div><h2>Projects I can talk about.</h2></div>
+  <p>Not just screenshots — these are projects where I worked with code, integration, debugging, deployment and collaboration.</p></div>
+  <div class="project-grid">
+
+    <article class="card project reveal"><div class="project-top"><span class="project-num">01</span><span class="tech">SIH 2026</span></div>
+      <h3>ULPIN Digital Twin</h3><div class="tech">React.js · Three.js · FastAPI · Python · REST APIs · Vercel · Render</div>
+      <ul><li>Built a web application to locate and visualize property parcels using ULPIN data.</li><li>Connected React frontend components to backend APIs and created interactive 2D and 3D property views.</li><li>Worked with coordinates, building geometry, elevation, floor data and spatial-overlap analysis.</li><li>Deployed the frontend on Vercel and backend services on Render.</li></ul>
+      <div class="project-links"><a class="mini" href="https://sih-2026-g6vh.vercel.app" target="_blank">Live Demo ↗</a></div>
+    </article>
+
+    <article class="card project reveal"><div class="project-top"><span class="project-num">02</span><span class="tech">AI WEB APP</span></div>
+      <h3>Drishti AI</h3><div class="tech">React.js · Python · AI/ML · REST APIs · Render</div>
+      <ul><li>Built and deployed an AI-powered web application.</li><li>Worked on frontend-backend communication and API-based functionality.</li><li>Handled interface development, debugging and deployment.</li></ul>
+      <div class="project-links"><a class="mini" href="https://drishti-ai-5m1x.onrender.com" target="_blank">Live Demo ↗</a></div>
+    </article>
+
+    <article class="card project reveal"><div class="project-top"><span class="project-num">03</span><span class="tech">WEB APP</span></div>
+      <h3>Spinora</h3><div class="tech">React.js · API Integration · Render</div>
+      <ul><li>Developed and deployed a responsive web application.</li><li>Worked on interactive frontend functionality and component integration.</li><li>Handled testing, debugging and deployment.</li></ul>
+      <div class="project-links"><a class="mini" href="https://spinora-llei.onrender.com" target="_blank">Live Demo ↗</a></div>
+    </article>
+
+    <article class="card project reveal"><div class="project-top"><span class="project-num">04</span><span class="tech">TEAM PROJECT</span></div>
+      <h3>AgriSense AI</h3><div class="tech">Node.js · Express.js · MongoDB · React Native · JWT · Gemini AI</div>
+      <ul><li>Collaborated on a smart agriculture platform combining sensor data with AI-powered recommendations.</li><li>Contributed to backend/API development, MongoDB integration and authentication.</li><li>Project work includes external service integration for agriculture data and AI functionality.</li></ul>
+      <div class="project-links"><a class="mini" href="https://github.com/Sameet728/AgrisenseAi" target="_blank">GitHub ↗</a></div>
+    </article>
+
+    <article class="card project reveal"><div class="project-top"><span class="project-num">05</span><span class="tech">TEAM PROJECT</span></div>
+      <h3>IntervuSetu</h3><div class="tech">Web Development · AI · Git/GitHub</div>
+      <ul><li>Collaborated with a team to build an interview preparation platform.</li><li>Contributed to feature development and project integration.</li><li>Worked through GitHub-based collaboration.</li></ul>
+      <div class="project-links"><a class="mini" href="https://github.com/Sameet728/IntervuSetu_" target="_blank">GitHub ↗</a></div>
+    </article>
+
+    <article class="card project reveal"><div class="project-top"><span class="project-num">06</span><span class="tech">WHAT I LEARNED</span></div>
+      <h3>From Idea to Deployment</h3><div class="tech">Planning · Coding · Integration · Debugging · Deployment</div>
+      <ul><li>Project work has exposed me to the full development loop rather than isolated coding exercises.</li><li>I have worked through API issues, deployment configuration, integration problems and frontend-backend communication.</li><li>That experience shapes how I approach new software problems.</li></ul>
+    </article>
+  </div>
+</div>
+</section>
+
+<section id="education">
+<div class="container">
+  <div class="section-head reveal"><div><div class="kicker">05 · Education</div><h2>Academic foundation.</h2></div>
+  <p>My formal education is focused on Artificial Intelligence & Machine Learning, supported by hands-on software projects.</p></div>
+  <div class="card education reveal">
+    <div class="edu"><div><h3>MIT Academy of Engineering (MITAOE), Alandi, Pune</h3><p>B.Tech — Artificial Intelligence & Machine Learning · 2024–Present · 3rd Year</p></div><div class="score">CGPA 7.9</div></div>
+    <div class="edu"><div><h3>New Wisdom International School, Wadebolhai</h3><p>HSC — Science · 2024</p></div><div class="score">73.6%</div></div>
+    <div class="edu"><div><h3>DAV Public School, Madhepur, Bihar</h3><p>SSC · 2022</p></div><div class="score">90.6%</div></div>
+  </div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+  <div class="section-head reveal"><div><div class="kicker">06 · Contact</div><h2>Let's build something.</h2></div>
+  <p>If you are a recruiter, jury member, mentor or fellow builder, I'd be happy to connect and discuss projects, internships or ideas.</p></div>
+  <div class="contact">
+    <div class="card reveal">
+      <div class="kicker">Open to</div>
+      <h3 style="font-size:25px;margin:8px 0">MERN / Full-Stack Internships</h3>
+      <p>Especially interested in project-based development where I can work on React, backend APIs, databases, integrations and deployment while learning professional engineering practices.</p>
+      <div class="hero-actions"><a class="btn primary" href="mailto:rayrachit92@gmail.com">Email Me</a><a class="btn" href="https://www.linkedin.com/in/rachit-kumar-614754395/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a class="btn" href="assets/Rachit_Kumar_Resume.pdf" download>Get Resume</a></div>
+    </div>
+    <div class="contact-list reveal">
+      <a class="contact-item" href="tel:+917209411359"><span class="icon">☎</span><div><small>Phone</small><strong>7209411359</strong></div></a>
+      <a class="contact-item" href="mailto:rayrachit92@gmail.com"><span class="icon">@</span><div><small>Email</small><strong>rayrachit92@gmail.com</strong></div></a>
+      <a class="contact-item" href="https://github.com/rayrachit92-cpu" target="_blank"><span class="icon">GH</span><div><small>GitHub</small><strong>github.com/rayrachit92-cpu</strong></div></a>
+      <a class="contact-item" href="https://www.linkedin.com/in/rachit-kumar-614754395/" target="_blank" rel="noopener noreferrer"><span class="icon">in</span><div><small>LinkedIn</small><strong>linkedin.com/in/rachit-kumar-614754395</strong></div></a>
+      <div class="contact-item"><span class="icon">⌖</span><div><small>Based in</small><strong>Pune, Maharashtra, India</strong></div></div>
+    </div>
+  </div>
+</div>
+</section>
+</main>
+
+<footer><div class="container" style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap">
+  <span>© 2026 Rachit Kumar. Built with curiosity and code.</span><span>AI & ML × Full-Stack Development</span>
+</div></footer>
+
+<script>
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})
+},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
